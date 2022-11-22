@@ -22,6 +22,11 @@ public class InteliSinglyLinkedClass<DataType> {
             while (navigation_node.next != null)
             {
                 navigation_node = navigation_node.next;
+
+                if(navigation_node.next != null)
+                {
+                    navigation_node = navigation_node.next;
+                }
             }
 
             navigation_node.next = new Inteli_Node<DataType>(data);
@@ -46,6 +51,12 @@ public class InteliSinglyLinkedClass<DataType> {
             {
                 navigation_node = navigation_node.next;
                 current_index++;
+
+                if(current_index + 1 < index)
+                {
+                    navigation_node = navigation_node.next;
+                    current_index++;
+                }
             }
 
             navigation_node.data = data;
@@ -70,6 +81,12 @@ public class InteliSinglyLinkedClass<DataType> {
             {
                 navigation_node = navigation_node.next;
                 current_index++;
+
+                if(current_index + 1 < index)
+                {
+                    navigation_node = navigation_node.next;
+                    current_index++;
+                }
             }
 
             return_data = navigation_node.data;
@@ -92,6 +109,12 @@ public class InteliSinglyLinkedClass<DataType> {
         {
             navigation_node.data = null;
             navigation_node = navigation_node.next;
+
+            if(navigation_node.next != null)
+            {
+                navigation_node.data = null;
+                navigation_node = navigation_node.next;
+            }
         }
 
         navigation_node.data = null;
